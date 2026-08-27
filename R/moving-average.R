@@ -1,3 +1,5 @@
+library(tidyverse)
+
 # The input to this function should be a data frame containing stream chemistry data
 # with a Sample_ID and Sample_Date column
 moving_average <- function(site_data) {
