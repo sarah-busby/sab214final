@@ -25,4 +25,5 @@ bisley_mov_ave_long <- bisley_mov_ave |>
     values_to = "concentration"
   )
 
+# Output clean data in output
 write_csv(bisley_mov_ave_long, "output/bisley_mov_ave_long.csv")

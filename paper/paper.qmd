@@ -14,15 +14,15 @@ The moving average of each ion concentration was calculated for each site in Bis
 ## Results
 ```{r, include = FALSE}
 library(tidyverse)
+bisley_mov_ave_long <- read_csv("../output/bisley_mov_ave_long.csv")
 ```
 ```{r, echo = FALSE, warning = FALSE}
-bisley_mov_ave_long <- read_csv("../output/bisley_mov_ave_long.csv")
 ggplot(
   data = bisley_mov_ave_long,
   mapping = aes(
     x = window_start,
     y = concentration,
-    color = site_id
+    color = site_id,
   )
 ) +
   xlim(ymd("1988-01-01"), ymd("1994-06-01")) +
@@ -31,12 +31,21 @@ ggplot(
     ~ion,
     scales = "free_y",
     ncol = 1,
-    strip.position = "left"
+    strip.position = "left",
+    labeller = as_labeller(c(
+      ca_mgl = "Ca mg l^-1",
+      k_mgl = "K mg l^-1",
+      mg_mgl = "Mg mg l^-1",
+      nh4n_ugl = "NH_4-N ug l^-1",
+      no3n_ugl = "NO_3-N ug l^-1"
+    ))
   ) +
-  xlab("Year") +
   labs(
+    x = "Year",
+    y = "Concentration",
+    color = "Site ID",
     subtitle = "Concentrations in Bisley, Puerto Rico streams before and after Hurricane Hugo, 9-wk moving averages from 1988 through 1994.
-    (a) potassium, (b) nitrate-N, (c) magnesium, (d) calcium and (e) ammonium-N. The vertical lines mark 
+    (a) calcium, (b) potassium, (c) magnesium, (d) nitrate-N and (e) ammonium-N. The vertical lines mark 
     the time of hurricane disturbance."
   ) +
   geom_vline(

@@ -43,5 +43,6 @@ moving_average <- function(site_data) {
     result$ca_mgl[i] <- mean(ca_window, na.rm = TRUE)
     result$nh4n_ugl[i] <- mean(nh4n_window, na.rm = TRUE)
   }
+  # Return filled moving average data frame
   return(result)
 }
