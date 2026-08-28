@@ -11,7 +11,8 @@ The raw data can be found in the data/ directory. To reproduce the clean data us
 The function used to calculate the 9-week moving average of each ion at a given site is defined in R/moving-average.R. After combining the data for plotting in 1_clean_data.R, the figure was recreated in paper/paper.qmd and rendered to the docs/ directory. Previous drafts of the analysis are housed in the scratch/ directory. 
 
 ## Source
-**Author:** Sarah Busby  
+**Author:** [Sarah Busby](https://github.com/sarah-busby)  
+**Collaborators:** [Kailani Latimer](https://github.com/kailani-boop), [Veronica Moran](https://github.com/veronica-moran)  
 **Date Created:** August 24th, 2025
 
 ## References
