@@ -23,6 +23,7 @@ ggplot(
     x = window_start,
     y = concentration,
     color = site_id,
+    linetype = site_id
   )
 ) +
   xlim(ymd("1988-01-01"), ymd("1994-06-01")) +
@@ -44,6 +45,7 @@ ggplot(
     x = "Year",
     y = "Concentration",
     color = "Site ID",
+    linetype = "Site ID",
     subtitle = "Concentrations in Bisley, Puerto Rico streams before and after Hurricane Hugo, 9-wk moving averages from 1988 through 1994.
     (a) calcium, (b) potassium, (c) magnesium, (d) nitrate-N and (e) ammonium-N. The vertical lines mark 
     the time of hurricane disturbance."
