@@ -290,7 +290,6 @@ ggplot(
     linetype = site_id
   )
 ) +
-  xlim(ymd("1988-01-01"), ymd("1994-06-01")) +
   geom_line() +
   facet_wrap(
     ~ion,
@@ -305,16 +304,24 @@ ggplot(
       no3n_ugl = "NO3-N ug l^-1"
     ))
   ) +
+  scale_x_date(
+    breaks = seq(ymd("1988-01-01"), ymd("1994-01-01"), by = "1 year")
+  ) +
+  xlim(ymd("1988-01-01"), ymd("1994-06-01")) +
   labs(
     x = "Year",
     y = "Concentration",
     linetype = "Site",
-    subtitle = "Concentrations in Bisley, Puerto Rico streams before and after Hurricane Hugo, 9-wk moving averages from 1988 through 1994.
+    caption = "Concentrations in Bisley, Puerto Rico streams before and after Hurricane Hugo, 9-wk moving averages from 1988 through 1994.
     (a) potassium, (b) nitrate-N, (c) magnesium, (d) calcium and (e) ammonium-N. The vertical lines mark 
     the time of hurricane disturbance."
   ) +
   geom_vline(
     xintercept = ymd("1989-09-18"),
     linetype = "dashed"
+  ) +
+  theme(
+    plot.caption.position = "plot",
+    plot.caption = element_text(hjust = 0)
   ) +
   theme_bw()

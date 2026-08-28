@@ -57,9 +57,9 @@ ggplot(
     x = "Year",
     y = "Concentration",
     linetype = "Site",
-    subtitle = "Concentrations in Bisley, Puerto Rico streams before and after Hurricane Hugo, 9-wk moving averages from 1988 through 1994.
-    (a) potassium, (b) nitrate-N, (c) magnesium, (d) calcium and (e) ammonium-N. The vertical lines mark 
-    the time of hurricane disturbance."
+    caption = "Concentrations in Bisley, Puerto Rico streams before and after Hurricane Hugo, 
+              9-wk moving averages from 1988 through 1994. (a) potassium, (b) nitrate-N, 
+              (c) magnesium, (d) calcium and (e) ammonium-N. The vertical lines mark the time of hurricane disturbance."
   ) +
   geom_vline(
     xintercept = ymd("1989-09-18"),
