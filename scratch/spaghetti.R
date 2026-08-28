@@ -320,8 +320,8 @@ ggplot(
     xintercept = ymd("1989-09-18"),
     linetype = "dashed"
   ) +
+  theme_bw() +
   theme(
-    plot.caption.position = "plot",
-    plot.caption = element_text(hjust = 0)
-  ) +
-  theme_bw()
+    strip.background = element_blank(),
+    strip.placement = "outside",
+  )
