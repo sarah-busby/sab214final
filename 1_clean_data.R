@@ -6,7 +6,7 @@ q2_data <- read_csv("data/QuebradaCuenca2-Bisley.csv")
 q3_data <- read_csv("data/QuebradaCuenca3-Bisley.csv")
 mpr_data <- read_csv("data/RioMameyesPuenteRoto.csv")
 
-# Calculate the moving average for each site at 9 week windows
+# Calculate the moving average for each site at 9-week windows
 source("R/moving-average.R")
 
 q1_mov_ave <- moving_average(q1_data)

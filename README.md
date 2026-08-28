@@ -1,6 +1,8 @@
 # Ion concentrations in Bisley, Puerto Rico streams before and after Hurricane Hugo
 
-This repository contains the clean data and code necessary to replicate Figure 3 from Schaefer et al. ([2000](https://doi.org/10.1017/s0266467400001358)). The data for the analysis was retrieved through the [Environmental Data Initiative](https://doi.org/10.1017/s0266467400001358). Data cleaning and analysis were conducted using R version 4.6.1 and require tidyverse package installation.
+This repository contains the clean data and code necessary to replicate Figure 3 from Schaefer et al. ([2000](https://doi.org/10.1017/s0266467400001358)). The data for the analysis were retrieved through the [Environmental Data Initiative](https://doi.org/10.1017/s0266467400001358). Data cleaning and analysis were conducted using R version 4.6.1 and require tidyverse package installation.
+
+<img src="images/schaefer_fig3.jpg" alt="Original figure 3 from Schaefer et al. (2000)" width="400"/>
 
 ## Data
 The raw data can be found in the data/ directory. To reproduce the clean data used for analysis, run 1_clean_data.R to create a csv of moving averages for all four stream site housed in the output/ directory.
