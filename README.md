@@ -1,7 +1,12 @@
 # Ion concentrations in Bisley, Puerto Rico streams before and after Hurricane Hugo
 
+This repository contains the clean data and code necessary to replicate Figure 3 from Schaefer et al. ([2000](https://doi.org/10.1017/s0266467400001358)). The data for the analysis was retrieved through the [Environmental Data Initiative](https://doi.org/10.1017/s0266467400001358). Data cleaning and analysis were conducted using R version 4.6.1 and require tidyverse package installation.
 
-This repository contains the clean data and code necessary to replicate Figure 3 from Schaefer et al. ([2000](https://doi.org/10.1017/s0266467400001358)). The data for the analysis was retrieved through the [Environmental Data Initiative](https://doi.org/10.1017/s0266467400001358).
+## Data
+The raw data can be found in the data/ directory. To reproduce the clean data used for analysis, run 1_clean_data.R to create a csv of moving averages for all four stream site housed in the output/ directory.
+
+## Analysis
+The function used to calculate the 9-week moving average of each ion at a given site is defined in R/moving-average.R. After combining the data for plotting in 1_clean_data.R, the figure was recreated in paper/paper.qmd and rendered to the docs/ directory. Previous drafts of the analysis are housed in the scratch/ directory. 
 
 ## Source
 **Author:** Sarah Busby  

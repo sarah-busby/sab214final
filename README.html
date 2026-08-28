@@ -55,7 +55,15 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="ion-concentrations-in-bisley-puerto-rico-streams-before-and-after-hurricane-hugo" class="level1">
 <h1>Ion concentrations in Bisley, Puerto Rico streams before and after Hurricane Hugo</h1>
-<p>This repository contains the clean data and code necessary to replicate Figure 3 from Schaefer et al.&nbsp;(<a href="https://doi.org/10.1017/s0266467400001358">2000</a>). The data for the analysis was retrieved through the <a href="https://doi.org/10.1017/s0266467400001358">Environmental Data Initiative</a>.</p>
+<p>This repository contains the clean data and code necessary to replicate Figure 3 from Schaefer et al.&nbsp;(<a href="https://doi.org/10.1017/s0266467400001358">2000</a>). The data for the analysis was retrieved through the <a href="https://doi.org/10.1017/s0266467400001358">Environmental Data Initiative</a>. Data cleaning and analysis were conducted using R version 4.6.1 and require tidyverse package installation.</p>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The raw data can be found in the data/ directory. To reproduce the clean data used for analysis, run 1_clean_data.R to create a csv of moving averages for all four stream site housed in the output/ directory.</p>
+</section>
+<section id="analysis" class="level2">
+<h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
+<p>The function used to calculate the 9-week moving average of each ion at a given site is defined in R/moving-average.R. After combining the data for plotting in 1_clean_data.R, the figure was recreated in paper/paper.qmd and rendered to the docs/ directory. Previous drafts of the analysis are housed in the scratch/ directory.</p>
+</section>
 <section id="source" class="level2">
 <h2 class="anchored" data-anchor-id="source">Source</h2>
 <p><strong>Author:</strong> Sarah Busby<br>
