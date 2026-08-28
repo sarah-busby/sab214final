@@ -65,5 +65,9 @@ ggplot(
     xintercept = ymd("1989-09-18"),
     linetype = "dashed"
   ) +
-  theme_bw()
+  theme_bw() +
+  theme(
+    strip.background = element_blank(),
+    strip.placement = "outside",
+  )
 ```
