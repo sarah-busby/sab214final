@@ -269,3 +269,52 @@ ggplot(
     plot.caption = element_text(hjust = 0),
     plot.caption.position = "plot"
   )
+
+library(tidyverse)
+bisley_mov_ave_long <- read_csv("output/bisley_mov_ave_long.csv")
+bisley_mov_ave_long$ion <- factor(
+  bisley_mov_ave_long$ion,
+  levels = c(
+    "k_mgl",
+    "no3n_ugl",
+    "mg_mgl",
+    "ca_mgl",
+    "nh4n_ugl"
+  )
+)
+ggplot(
+  data = bisley_mov_ave_long,
+  mapping = aes(
+    x = window_start,
+    y = concentration,
+    linetype = site_id
+  )
+) +
+  xlim(ymd("1988-01-01"), ymd("1994-06-01")) +
+  geom_line() +
+  facet_wrap(
+    ~ion,
+    scales = "free_y",
+    ncol = 1,
+    strip.position = "left",
+    labeller = as_labeller(c(
+      ca_mgl = "Ca mg l^-1",
+      k_mgl = "K mg l^-1",
+      mg_mgl = "Mg mg l^-1",
+      nh4n_ugl = "NH4-N ug l^-1",
+      no3n_ugl = "NO3-N ug l^-1"
+    ))
+  ) +
+  labs(
+    x = "Year",
+    y = "Concentration",
+    linetype = "Site",
+    subtitle = "Concentrations in Bisley, Puerto Rico streams before and after Hurricane Hugo, 9-wk moving averages from 1988 through 1994.
+    (a) potassium, (b) nitrate-N, (c) magnesium, (d) calcium and (e) ammonium-N. The vertical lines mark 
+    the time of hurricane disturbance."
+  ) +
+  geom_vline(
+    xintercept = ymd("1989-09-18"),
+    linetype = "dashed"
+  ) +
+  theme_bw()

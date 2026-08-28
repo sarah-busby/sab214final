@@ -25,7 +25,6 @@ moving_average <- function(site_data) {
     w2 <- result$window_start[i] + weeks(9)
 
     # Create a logical vector, called "in_window", that says which samples are inside the window
-    # Hint: you'll compare sample dates to the start and end of the window
     in_window <- site_data$Sample_Date >= w1 &
       site_data$Sample_Date < w2
 
